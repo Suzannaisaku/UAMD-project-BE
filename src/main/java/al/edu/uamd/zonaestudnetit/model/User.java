@@ -1,4 +1,4 @@
-package com.ap.registration.model;
+package al.edu.uamd.zonaestudnetit.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -6,34 +6,37 @@ import javax.persistence.Id;
 @Entity
 public class User {
     @Id
-    private int id;
-    private String emailId;
+    private int userId;
+    private String userEmail;
     private String userName;
-    private String password;
+    private String userPassword;
+    private String userSurname;
 
     public User() {
     }
-    public User(int id, String emailId, String userName, String password) {
-        this.id = id;
-        this.emailId = emailId;
+
+    public User(int userId, String userEmail, String userName, String userPassword, String userSurname) {
+        this.userId = userId;
+        this.userEmail = userEmail;
         this.userName = userName;
-        this.password = password;
+        this.userPassword = userPassword;
+        this.userSurname = userSurname;
     }
 
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public  String getEmailId() {
-        return emailId;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public String getUserName() {
@@ -44,11 +47,19 @@ public class User {
         this.userName = userName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
+    public String getUserSurname() {
+        return userSurname;
+    }
+
+    public void setUserSurname(String userSurname) {
+        this.userSurname = userSurname;
     }
 }

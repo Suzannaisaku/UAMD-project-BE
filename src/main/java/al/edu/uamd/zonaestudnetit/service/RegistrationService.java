@@ -1,11 +1,13 @@
-package com.ap.registration.service;
+package al.edu.uamd.zonaestudnetit.service;
 
-import com.ap.registration.model.User;
-import com.ap.registration.repository.RegistrationReposetory;
+import al.edu.uamd.zonaestudnetit.model.User;
+import al.edu.uamd.zonaestudnetit.repository.RegistrationReposetory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
+@Component //auto u
 public class RegistrationService  {
     @Autowired
     private RegistrationReposetory repo;
@@ -17,9 +19,9 @@ public class RegistrationService  {
 
     }
     public User fetchUserByEmailId(String email){
-        return repo.findByEmailId(email);
+        return repo.findByUserEmail(email);
     }
     public User fetchUserByEmailIdAndPassword(String email,String password){
-        return repo.findByEmailIdAndPassword(email, password);
+        return repo.findByUserEmailAndUserPassword(email, password);
     }
 }
